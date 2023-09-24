@@ -1,1 +1,1 @@
-# godot_openvdb_texture3d
+# How to convert OpenVDB into Texture3D and Access it in Godot Spatial Shader
