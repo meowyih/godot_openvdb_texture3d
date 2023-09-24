@@ -1,6 +1,6 @@
 # How to convert OpenVDB into Texture3D and Access it in Godot (4.1) Spatial Shader
 
-This project is a memo of how to convert OpenVDB data into Godot.
+This project is a memo of how to convert OpenVDB data into Godot for myself.
 
 ## Background Story
 
