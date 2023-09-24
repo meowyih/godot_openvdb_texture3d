@@ -1,4 +1,4 @@
-# How to convert OpenVDB into Texture3D and Access it in Godot (4.1) Spatial Shader
+# How to Convert OpenVDB into Texture3D and Display it in Godot (4.1) Spatial Shader
 
 ![Alt text](screenshot.png?raw=true "Title")
 
