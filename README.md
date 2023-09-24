@@ -4,7 +4,7 @@ This project is a memo of how to convert OpenVDB data into Godot for myself.
 
 ## Background Story
 
-Godot does not support OpenVDB, at least before version 4.2. In order to display the VDB data, there are two steps to achieve that:
+Godot does not support OpenVDB, at least before version 4.2. To display the VDB data in Godot, there are two steps we need to achieve:
 
 * Write Tool to Convert VDB file into Godot's Texture3D
 * Use Godot Spatial Shader to Access and Display Texture3D
