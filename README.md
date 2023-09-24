@@ -10,7 +10,7 @@ The Godot project might work if the large texture3D (~70MB) upload correcly. But
 
 Godot does not support OpenVDB, at least before version 4.2. To display the VDB data in Godot, there are two steps we need to achieve:
 
-* Write Tool to Convert VDB file into Godot's Texture3D
+* Creaye Tool to Convert VDB file into Godot's Texture3D
 * Use Godot Spatial Shader to Access and Display Texture3D
 
 You can find some code to demostrate both steps. The VDB to Texture3D convertor is under *\cpp\\* folder. It is just a simple main.cpp with no makefile. In main directory, there are two shader files, *local_space_vdb.gdshader* and *world_space_vdb.gdshader*. Both are spatial type shows how to display a texture3D inside box mesh using ray marching. The different is one is using local coordinate and the other is using world coordinate.
