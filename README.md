@@ -8,7 +8,7 @@ The Godot project might work if the large texture3D (~70MB) upload correcly. But
 
 ## Background Story
 
-Godot does not support OpenVDB, at least before version 4.2. To display the VDB data in Godot, there are two steps we need to achieve:
+Godot does not support OpenVDB importing, at least in the latest 4.2 version. To display the VDB data in Godot, there are two steps we need to achieve:
 
 * Create Tool to Convert VDB file into Godot's Texture3D
 * Use Godot Spatial Shader to Access and Display Texture3D
