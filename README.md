@@ -26,8 +26,6 @@ I use OpenVDB library to read the VDB file in my C++ tool. In order to compile t
 * OpenVDB Libray Github: https://github.com/AcademySoftwareFoundation/openvdb
 * OpenVDB API cookbook: https://www.openvdb.org/documentation/doxygen/codeExamples.html
 
-NOTE: If you want to link the OpenVDB in your Visual Studio project, you might need to disable the *Properties -> C/C++ -> SDL Check*.
-
 ## OpenVDB to Texture3D tool
 
 The source code *cpp_tool/main.cpp* has two major functions. One is reading voxel data from OpenVDB file, the other is writing voxel data into 24bits/pixel BMP file. It is a small file with only 2xx lines. It has many precondition and does not have good error handling. Here are something you need to know before use/rewrite it.
@@ -36,6 +34,11 @@ The source code *cpp_tool/main.cpp* has two major functions. One is reading voxe
 * The code assumes the input VDB file contains 'file_bbox_max' metadata, which is Vec3i type. If you export the VDB from Embergen, then it is not a problem. Otherwise you might need to calculate the simulation bounary by yourself.
 * The output file use 24 bits/pixel BMP format. For each pixel, the RED value is density and the GREEN is flames. Since each data has only one byte length, it is imprecise. Check the comment inside *cpp_tool/main.cpp* if you need high precise value.
 * Godot Texture3D uses single BMP to represents 3D data. In order to do that, it slices one image just like 2D animation sprites. The maximum slice is H:256 V:256. In other words, if the maximum high of youe VDB model is larger than 65,535, it causes problem in Godot.
+
+Here are somthing that might help to to integrate openVDB library and compile that *cpp_tool/main.cpp*:
+
+* Disable the *Properties -> C/C++ -> SDL Check*.
+* Choose C++17 standard in *Properties -> C/C++ -> Language*.
 
 ## Spatial Shader for VDB display
 
