@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://b2hpn4efl4c3x"]
+
+[ext_resource type="Shader" path="res://local_space_vdb.gdshader" id="1_h8ood"]
+[ext_resource type="CompressedTexture3D" uid="uid://b3cj038idtl5k" path="res://t3d_w24_h13.bmp" id="2_gndxc"]
+[ext_resource type="Shader" path="res://world_space_vdb.gdshader" id="3_knqaa"]
+
+[sub_resource type="Environment" id="Environment_hu00g"]
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_temporal_reprojection_enabled = false
+
+[sub_resource type="BoxMesh" id="BoxMesh_cod4t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ueou6"]
+render_priority = 0
+shader = ExtResource("1_h8ood")
+shader_parameter/iteration = 32
+shader_parameter/t3d = ExtResource("2_gndxc")
+
+[sub_resource type="BoxMesh" id="BoxMesh_qyq4u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_idoxy"]
+render_priority = 0
+shader = ExtResource("3_knqaa")
+shader_parameter/iteration = 32
+shader_parameter/t3d = ExtResource("2_gndxc")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hu00g")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.560991, -0.590943, -0.57972, -0.733527, 0.030258, 0.678986, -0.383701, 0.806146, -0.450447, -17.446, 4.39742, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49838, 0.537468, 2.02198)
+
+[node name="LocalSpaceVdb" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31193, 0, -0.889081)
+mesh = SubResource("BoxMesh_cod4t")
+surface_material_override/0 = SubResource("ShaderMaterial_ueou6")
+
+[node name="WorldSpaceVdb" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
+mesh = SubResource("BoxMesh_qyq4u")
+surface_material_override/0 = SubResource("ShaderMaterial_idoxy")
