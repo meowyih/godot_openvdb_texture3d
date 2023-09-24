@@ -35,4 +35,15 @@ The source code *cpp_tool/main.cpp* has two major functions. One is reading voxe
 
 ## Spatial Shader for VDB display
 
-For demo purpose, the code *local_space_vdb.gdshader* and *world_space_vdb.gdshader* only shows the density in basi
+The shader *local_space_vdb.gdshader* and *world_space_vdb.gdshader* show two things:
+
+* How to get certain 3D point's (UVW) 'density' from Texture3D?
+* How to draw the volumetric density inside Box Mesh using ray-marching.
+
+The first part is straight-forward. The ray-marching code might confusing some people who don't familar with ray-marcging. Just google 'ray marching' or 'SDF' to get some idea.
+
+## Further Work
+
+* In order to same the memory, we should implement the Texture3D with GDExtension, which read the voxel data from openVDB grid directly.
+* Implement Texture3DArray to animate the VDB and check the performance.
+* Use compilcate color mapping to see the 'real' result, instead of density. 
