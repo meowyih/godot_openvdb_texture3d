@@ -44,6 +44,6 @@ The first part is straight-forward. The ray-marching code might confusing some p
 
 ## Further Work
 
-* In order to same the memory, we should implement the Texture3D with GDExtension, which read the voxel data from openVDB grid directly.
-* Implement Texture3DArray to animate the VDB and check the performance.
+* To save the memory, we should implement the Texture3D with GDExtension/C++Module, which read the voxel data from openVDB grid directly.
+* Implement Texture3DArray to animate the VDB data, and then check the performance.
 * Use compilcate color mapping to see the 'real' result, instead of density. 
