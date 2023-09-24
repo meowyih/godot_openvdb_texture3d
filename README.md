@@ -43,7 +43,7 @@ The shader *local_space_vdb.gdshader* and *world_space_vdb.gdshader* show two th
 * How to get certain 3D point's (UVW) 'density' from Texture3D?
 * How to draw the volumetric density inside Box Mesh using ray-marching.
 
-The first part is straight-forward. The ray-marching code might confusing some people who don't familar with ray-marcging. Just google 'ray marching' or 'SDF' to get some idea.
+The first part is straight-forward. The second one might confusing some people who don't familar with ray-marcging. Just google 'ray marching' or 'SDF' to get some idea.
 
 ## Further Work
 
