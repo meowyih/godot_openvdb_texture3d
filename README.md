@@ -35,7 +35,7 @@ The source code *cpp_tool/main.cpp* has two major functions. One is reading voxe
 * The output file use 24 bits/pixel BMP format. For each pixel, the RED value is density and the GREEN is flames. Since each data has only one byte length, it is imprecise. Check the comment inside *cpp_tool/main.cpp* if you need high precise value.
 * Godot Texture3D uses single BMP to represents 3D data. In order to do that, it slices one image just like 2D animation sprites. The maximum slice is H:256 V:256. In other words, if the maximum high of youe VDB model is larger than 65,535, it causes problem in Godot.
 
-Here are somthing that might help to to integrate openVDB library and compile that *cpp_tool/main.cpp*:
+Here are somthing that might help to to integrate openVDB library and compile that *cpp_tool/main.cpp* using Visual Studio IDE:
 
 * Disable the *Properties -> C/C++ -> SDL Check*.
 * Choose C++17 standard in *Properties -> C/C++ -> Language*.
