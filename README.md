@@ -21,7 +21,7 @@ Godot 4.0 introduced **Fog Shader**, which is also a volumetric shader type. It 
 
 ## OpenVDB Library
 
-I use OpenVDB library to read the VDB file in my C++ tool. In order to compile that standalone, colleage homework style *cpp_tool/main.cpp*, you need to build the OpenVDB first. 
+I use OpenVDB library to read the VDB file in my C++ tool. In order to compile that standalone, colleage homework style *cpp_tool/main.cpp*, you need to build the OpenVDB first. Link to dynamic library and include the header file should be pretty standard. Check ##OpenVDB to Texture3D tool## section for some tips.
 
 * OpenVDB Libray Github: https://github.com/AcademySoftwareFoundation/openvdb
 * OpenVDB API cookbook: https://www.openvdb.org/documentation/doxygen/codeExamples.html
