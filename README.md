@@ -2,7 +2,8 @@
 
 ![Alt text](screenshot.png?raw=true "Title")
 
-This project is a memo of how to convert OpenVDB data into Godot for myself. 
+This project is a memo of how to convert OpenVDB data into Godot. 
+
 The Godot project might work if the large texture3D (~70MB) upload correcly. But the C++ definitely won't work because it requires OpenVDB library. Check the **OpenVDB Library** section for detail.
 
 ## Background Story
