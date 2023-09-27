@@ -46,12 +46,6 @@ int main()
 	openvdb::initialize();
 	openvdb::io::File file(vdb_filename);
 	file.open();
-
-	for (openvdb::io::File::NameIterator nameIter = file.beginName();
-		nameIter != file.endName(); ++nameIter)
-	{
-		std::cout << nameIter.gridName() << std::endl;
-	}
 	openvdb::FloatGrid::Ptr density_grid = openvdb::gridPtrCast<openvdb::FloatGrid>(file.readGrid("density"));
 	openvdb::FloatGrid::Ptr flames_grid = openvdb::gridPtrCast<openvdb::FloatGrid>(file.readGrid("flames"));
 	file.close();
@@ -166,7 +160,8 @@ void convertVDBtoTexture3D(openvdb::FloatGrid::Ptr density_grid, openvdb::FloatG
 		for (int idx = start_block_index; idx < start_block_index + MAX_SLICE_SIZE; idx++)
 		{
 			// int block_line_idx = idx - start_block_index;
-			int block_line_idx = start_block_index + MAX_SLICE_SIZE - idx - 1;
+			// int block_line_idx = start_block_index + MAX_SLICE_SIZE - idx - 1;
+			int block_line_idx = total_block > MAX_SLICE_SIZE ? start_block_index + MAX_SLICE_SIZE - idx - 1 : idx - start_block_index;
 			unsigned char* buffer = imgs[idx];
 
 			if (remain_block <= 0)
